@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+        <title>Reveal - Business Listing & Directory HTML Template</title>
+		
+        <!-- All Plugins Css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins.css') }}">
+		 
+		<link rel="shortcut icon" href="#">
+
+        <!-- Custom CSS -->
+        <link href="{{ url_for('static', filename='assets/css/styles.css') }}" rel="stylesheet">
+		
+		<!-- Custom Color Option -->
+		<link href="{{ url_for('static', filename='assets/css/colors.css') }}" rel="stylesheet">
+		
+    </head>
+	
+    <body class="red-skin">
+	
+		 <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+		
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+		
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+            <!-- Start Navigation -->
+			<div class="header header-light">
+				<div class="container">
+					<nav id="navigation" class="navigation navigation-landscape">
+						<div class="nav-header">
+							<a class="nav-brand" href="#">
+								<img src="{{ url_for('static', filename='assets/img/logo.png') }}" class="logo" alt="" />
+							</a>
+							<div class="nav-toggle"></div>
+						</div>
+						<div class="nav-menus-wrapper">
+							<ul class="nav-menu">
+							
+								<li><a href="javascript:void(0);">Home<span class="submenu-indicator"></span></a>
+								</li>
+								
+								<li><a href="contact.html">Contacts</a></li>
+								
+							</ul>
+							
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+			<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+			
+			
+			<!-- ============================ Hero Banner  Start================================== -->
+			<div class="image-cover search-header-banner" style="background:url(https://via.placeholder.com/1920x900) no-repeat;" data-overlay="6">
+				<div class="container">
+					<div class="hero-search">
+						<h1 class="text-center">Discover your city</h1>
+					</div>
+					<div class="full-search-2 Reveal-search Reveal-search-radius box-style mb-4">
+						
+						<div class="Reveal-search-content">
+							
+							<div class="row">
+							
+								<div class="col-lg-4 col-md-4 col-sm-12 br-left-p">
+									<div class="form-group">
+										<div class="input-with-icon">
+											<input type="text" class="form-control" placeholder="Keywords...">
+											<i class="theme-cl ti-search"></i>
+										</div>
+									</div>
+								</div>
+								
+								
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="form-group">
+										<div class="input-with-icon">
+											<select id="list-category" class="form-control">
+												<option value="">&nbsp;</option>
+												<option value="1">Spa & Bars</option>
+												<option value="2">Restaurants</option>
+												<option value="3">Hotels</option>
+												<option value="4">Educations</option>
+												<option value="5">Business</option>
+												<option value="6">Retail & Shops</option>
+												<option value="7">Garage & Services</option>
+											</select>
+											<i class="theme-cl ti-briefcase"></i>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-2 col-md-2 col-sm-12">
+									<div class="form-group">
+										<a href="#" class="btn search-btn">Search</a>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Hero Banner End ================================== -->
+
+			
+			<!-- =========== List In Grid View =================== -->
+			<section class="gray">
+				<div class="container">
+					
+					<div class="row mb-3">
+
+					</div>
+					
+					<!-- Filter Wrap -->
+					<div class="row collapse" id="filter">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="filter-box">
+								<!-- row -->
+								<div class="row mb-4">
+									<div class="col-md-3 col-md-3">
+										<div class="form-group">
+											<label>Check In & Out</label>
+											<div class="input-with-icon gray">
+												<input type="text" class="form-control" placeholder="Check-In - Check-Out" id="booking-date-search" >
+												<i class="lni-calendar"></i>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-5 col-md-5">
+										<div class="row">
+											<div class="col-lg-6 col-md-6 col-sm-6">
+												<div class="form-group">
+													<label>Guest</label>
+													<div class="Reveal-guest-picker gray">
+														<div class="qty">
+															<span class="gminus"><i class="ti-minus"></i></span>
+															<input type="number" class="guest" name="qty" value="1">
+															<span class="gplus"><i class="ti-plus"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6">
+												<div class="form-group">
+													<label>Children</label>
+													<div class="Reveal-guest-picker gray">
+														<div class="qty">
+															<span class="cminus"><i class="ti-minus"></i></span>
+															<input type="number" class="children" name="qty" value="0">
+															<span class="cplus"><i class="ti-plus"></i></span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4">
+										<div class="form-group">
+											<label>Work Trip</label>
+											<div class="drp-ct-flex">
+												<div class="drp-ct-flc">
+													<strong>Travelling for work?</strong><br>
+													Explore homes and boutique hotels with 5-star ratings from business travellers
+												</div>
+												<div class="material-switch">
+													<input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" checked>
+													<label for="someSwitchOptionInfo" class="label-success"></label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<!-- row -->
+								<div class="row">
+									<div class="col-md-3 col-md-3">
+										<div class="form-group">
+											<label>Tour Type</label>
+											<div class="form-group">
+											<div class="input-with-icon gray">
+												<select id="tour-type" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">Entire place</option>
+													<option value="2">Private room</option>
+													<option value="3">Hotel room</option>
+													<option value="4">Shared room</option>
+												</select>
+												<i class="ti-basketball"></i>
+											</div>
+										</div>
+										</div>
+									</div>
+									<div class="col-lg-5 col-md-5">
+										<div class="form-group">
+											<label>Price Range</label>
+											<div class="range-slider">
+												<div class="distance-title">around selected destination <span class="theme-cl"></span> km</div>
+												<input class="distance-radius rangeslider--horizontal" type="range" min="1" max="100" step="1" value="1" data-title="Radius around selected destination">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4">
+										<div class="form-group">
+											<label>Instant Book</label>
+											<div class="drp-ct-flex">
+												<div class="drp-ct-flc">
+													<strong>Instant Book?</strong><br>
+													Explore homes and boutique hotels with 5-star ratings from business travellers
+												</div>
+												<div class="material-switch">
+													<input id="instantbooks" name="someSwitchOption001" type="checkbox">
+													<label for="instantbooks" class="label-success"></label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<!-- row -->
+								<div class="row">
+									<div class="col-lg-12 col-md-12">
+										<h4 class="mb-2">Select Amenties</h4>
+									</div>
+								</div>
+								
+								<!-- row -->
+								<div class="row">
+									<div class="col-lg-4 col-md-4 col-sm-6">
+										<ul class="no-ul-list">
+											<li>
+												<input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
+												<label for="a-1" class="checkbox-custom-label">Air Condition</label>
+											</li>
+											<li>
+												<input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
+												<label for="a-2" class="checkbox-custom-label">Bedding</label>
+											</li>
+											<li>
+												<input id="a-3" class="checkbox-custom" name="a-3" type="checkbox">
+												<label for="a-3" class="checkbox-custom-label">Heating</label>
+											</li>
+										</ul>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-6">
+										<ul class="no-ul-list">
+											<li>
+												<input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
+												<label for="a-4" class="checkbox-custom-label">Internet</label>
+											</li>
+											<li>
+												<input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
+												<label for="a-5" class="checkbox-custom-label">Microwave</label>
+											</li>
+											<li>
+												<input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
+												<label for="a-6" class="checkbox-custom-label">Smoking Allow</label>
+											</li>
+										</ul>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-6">
+										<ul class="no-ul-list">
+											<li>
+												<input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
+												<label for="a-7" class="checkbox-custom-label">Terrace</label>
+											</li>
+											<li>
+												<input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
+												<label for="a-8" class="checkbox-custom-label">Balcony</label>
+											</li>
+											<li>
+												<input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
+												<label for="a-9" class="checkbox-custom-label">Icon</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						
+						<!-- Single Listing Grid -->
+						{% for place in datas %}
+						<div class="col-lg-4 col-md-6 col-sm-12">
+							<div class="Reveal-grid-wrapper">
+								<div class="Reveal-grid-thumb">
+
+									<div class="lup-category"><a href="/listing?id={{place.id}}">{{place.Catagory}}</a></div>
+									<a href="/listing?id={{place.id}}" class="lup-box"><img src="{{place.Photos_Place}}" class="img-fluid" alt="" style="width: 100%; height: 220px; object-fit: none;" /></a>
+								</div>
+								<div class="Reveal-grid-caption">
+									<div class="Reveal-grid-caption-header">
+										<h4 class="Reveal-header-title"><a href="/listing?id={{place.id}}">{{place.Name}}</a></h4>
+										<div class="Reveal-grid-reviews">
+											{% for st in range(place.stared) %}<i class="fas fa-star filled"></i>{% endfor %}
+											{% for st in range(place.noneStared) %}<i class="fas fa-star"></i>{% endfor %}
+											<span class="overall-reviews">{{place.Rate}} / ({{place.Reviews_Count}})</span>
+										</div>
+									</div>
+									<div class="Reveal-grid-caption-body">
+										<ul class="Reveal-contact-list">
+											<li><img src="{{ url_for('static', filename='assets/img/add.svg') }}" class="" alt="" />{{place.Address}}</li>
+											<li><img src="{{ url_for('static', filename='assets/img/call.svg') }}" class="" alt="" />{{place.Telephone}}</li>
+										</ul>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						{% endfor %}
+						
+						
+					</div>
+					
+					<div class="row">
+						
+					</div>
+					
+				</div>
+			</section>
+			<!-- =========== End All List In Grid View =================== -->
+			
+			<!-- ============================ Call To Action Start ================================== -->
+			<!-- ============================ Call To Action End ================================== -->
+			
+			<!-- ============================ Footer Start ================================== -->
+			<footer class="dark-footer skin-dark-footer">
+				<div>
+					<div class="container">
+						<div class="row">
+							
+							<div class="col-lg-4 col-md-6">
+								<div class="footer-widget">
+									<img src="{{ url_for('static', filename='assets/img/logo-light.png') }}" class="img-fluid f-logo" alt="" />
+									<p>407-472 Rue Saint-Sulpice, Montreal<br>Quebec, H2Y 2V8</p>
+									<ul class="footer-bottom-social">
+										<li><a href="#"><i class="ti-facebook"></i></a></li>
+										<li><a href="#"><i class="ti-twitter"></i></a></li>
+										<li><a href="#"><i class="ti-instagram"></i></a></li>
+										<li><a href="#"><i class="ti-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div>		
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Useful links</h4>
+									<ul class="footer-menu">
+										<li><a href="about-us.html">About Us</a></li>
+										<li><a href="faq.html">FAQs Page</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="login.html">Login</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Developers</h4>
+									<ul class="footer-menu">
+										<li><a href="booking.html">Booking</a></li>
+										<li><a href="stays.html">Stays</a></li>
+										<li><a href="adventures.html">Adventures</a></li>
+										<li><a href="author-detail.html">Author Detail</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Useful links</h4>
+									<ul class="footer-menu">
+										<li><a href="about-us.html">About Us</a></li>
+										<li><a href="faq.html">Jobs</a></li>
+										<li><a href="checkout.html">Events</a></li>
+										<li><a href="about-us.html">Press</a></li>
+									</ul>
+								</div>
+							</div>
+									
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Useful links</h4>
+									<ul class="footer-menu">
+										<li><a href="about-us.html">Support</a></li>
+										<li><a href="about-us.html">About Us</a></li>
+										<li><a href="checkout.html">Privacy & Terms</a></li>
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row align-items-center">
+							
+							<div class="col-lg-12 col-md-12 text-center">
+								<p class="mb-0">© 2021 Reveal. Designd By <a href="https://themezhub.net">Themezhub</a> All Rights Reserved</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- ============================ Footer End ================================== -->
+			
+			<!-- Filter Wrap -->
+			<div class="simple-sidebar sm-sidebar" id="filter_search">
+				<div class="simple-sidebars" id="filter_search">
+				
+					<div class="simple-sidebar-header">
+						<div class="simple-headers"><h4 class="sm-sidebar-title">Close Filter</h4></div>
+						<button onclick="closeFilterSearch()" class="w3-bar-item w3-button w3-large"><i class="ti-close"></i></button>
+					</div>
+					<div class="filter-box">
+						<!-- row -->
+						<div class="row mb-4">
+							<div class="col-md-12 col-md-12">
+								<div class="form-group">
+									<label>Check In & Out</label>
+									<div class="input-with-icon gray">
+										<input type="text" class="form-control" placeholder="Check-In - Check-Out" id="booking-date-search" >
+										<i class="lni-calendar"></i>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12">
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<div class="form-group">
+											<label>Guest</label>
+											<div class="Reveal-guest-picker gray">
+												<div class="qty">
+													<span class="gminus"><i class="ti-minus"></i></span>
+													<input type="number" class="guest" name="qty" value="1">
+													<span class="gplus"><i class="ti-plus"></i></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<div class="form-group">
+											<label>Children</label>
+											<div class="Reveal-guest-picker gray">
+												<div class="qty">
+													<span class="cminus"><i class="ti-minus"></i></span>
+													<input type="number" class="children" name="qty" value="0">
+													<span class="cplus"><i class="ti-plus"></i></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-12 col-md-12">
+								<div class="form-group">
+									<label>Tour Type</label>
+									<div class="form-group">
+									<div class="input-with-icon gray">
+										<select id="tour-type" class="form-control">
+											<option value="">&nbsp;</option>
+											<option value="1">Entire place</option>
+											<option value="2">Private room</option>
+											<option value="3">Hotel room</option>
+											<option value="4">Shared room</option>
+										</select>
+										<i class="ti-basketball"></i>
+									</div>
+								</div>
+								</div>
+							</div>
+							
+							<div class="col-lg-12 col-md-12">
+								<div class="form-group">
+									<label>Price Range</label>
+									<div class="range-slider">
+										<div class="distance-title">around selected destination <span class="theme-cl"></span> km</div>
+										<input class="distance-radius rangeslider--horizontal" type="range" min="1" max="100" step="1" value="1" data-title="Radius around selected destination">
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-lg-12 col-md-12">
+								<div class="form-group">
+									<label>Work Trip</label>
+									<div class="drp-ct-flex">
+										<div class="drp-ct-flc">
+											<strong>Travelling for work?</strong><br>
+											Explore homes and boutique hotels with 5-star ratings from business travellers
+										</div>
+										<div class="material-switch">
+											<input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" checked>
+											<label for="someSwitchOptionInfo" class="label-success"></label>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-lg-12 col-md-12">
+								<div class="form-group">
+									<label>Instant Book</label>
+									<div class="drp-ct-flex">
+										<div class="drp-ct-flc">
+											<strong>Instant Book?</strong><br>
+											Explore homes and boutique hotels with 5-star ratings from business travellers
+										</div>
+										<div class="material-switch">
+											<input id="instantbooks" name="someSwitchOption001" type="checkbox">
+											<label for="instantbooks" class="label-success"></label>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						
+						<!-- row -->
+						<div class="row">
+							<div class="col-lg-12 col-md-12">
+								<h4 class="mb-2">Select Amenties</h4>
+							</div>
+						</div>
+						
+						<!-- row -->
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<ul class="no-ul-list">
+									<li>
+										<input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
+										<label for="a-1" class="checkbox-custom-label">Air Condition</label>
+									</li>
+									<li>
+										<input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
+										<label for="a-2" class="checkbox-custom-label">Bedding</label>
+									</li>
+									<li>
+										<input id="a-3" class="checkbox-custom" name="a-3" type="checkbox">
+										<label for="a-3" class="checkbox-custom-label">Heating</label>
+									</li>
+								</ul>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<ul class="no-ul-list">
+									<li>
+										<input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
+										<label for="a-4" class="checkbox-custom-label">Internet</label>
+									</li>
+									<li>
+										<input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
+										<label for="a-5" class="checkbox-custom-label">Microwave</label>
+									</li>
+									<li>
+										<input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
+										<label for="a-6" class="checkbox-custom-label">Smoking Allow</label>
+									</li>
+								</ul>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<ul class="no-ul-list">
+									<li>
+										<input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
+										<label for="a-7" class="checkbox-custom-label">Terrace</label>
+									</li>
+									<li>
+										<input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
+										<label for="a-8" class="checkbox-custom-label">Balcony</label>
+									</li>
+									<li>
+										<input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
+										<label for="a-9" class="checkbox-custom-label">Icon</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Log In Modal -->
+			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal">
+				<div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+					<div class="modal-content" id="registermodal">
+						<span class="mod-close" data-dismiss="modal"><i class="ti-close"></i></span>
+						<div class="modal-body">
+							<h4 class="modal-header-title">Log <span class="theme-cl">In</span></h4>
+							<div class="login-form">
+								<form>
+								
+									<div class="form-group">
+										<label>User Name</label>
+										<div class="input-with-icon gray">
+											<input type="text" class="form-control" placeholder="Username">
+											<i class="ti-user"></i>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label>Password</label>
+										<div class="input-with-icon gray">
+											<input type="password" class="form-control" placeholder="*******">
+											<i class="ti-unlock"></i>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<button type="submit" class="btn btn-md full-width pop-login">Login</button>
+									</div>
+								
+								</form>
+							</div>
+							<div class="modal-divider"><span>Or login via</span></div>
+							<div class="social-login mb-3">
+								<ul>
+									<li><a href="#" class="btn fb"><i class="ti-facebook"></i></a></li>
+									<li><a href="#" class="btn google"><i class="ti-google"></i></a></li>
+									<li><a href="#" class="btn twitter"><i class="ti-twitter"></i></a></li>
+								</ul>
+							</div>
+							<div class="modat-foot">
+								<div class="md-left">Have't Account? <a href="register.html" class="theme-cl">Sign Up</a></div>
+								<div class="md-right"><a href="#" class="theme-cl">Forget Password?</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+			
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+			
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/popper.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/rangeslider.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/select2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/slick.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/slider-bg.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/lightbox.js') }}"></script> 
+		<script src="{{ url_for('static', filename='assets/js/imagesloaded.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/counterup.min.js') }}"></script>
+		 
+		<script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+
+		<!-- Date Booking Script -->
+		<script src="{{ url_for('static', filename='assets/js/moment.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/daterangepicker.js') }}"></script>
+		
+		<script>
+			function openFilterSearch() {
+				document.getElementById("filter_search").style.display = "block";
+			}
+			function closeFilterSearch() {
+				document.getElementById("filter_search").style.display = "none";
+			}
+		</script>
+		
+		<script>
+		$(function() {
+
+			var start = moment().subtract(0, 'days');
+			var end = moment().add(2, 'days');
+
+			function cb(start, end) {
+				$('#booking-date-search').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+			}
+			cb(start, end);
+			$('#booking-date-search').daterangepicker({
+				"opens": "right",
+				"autoUpdateInput": true,
+				"alwaysShowCalendars": true,
+				startDate: start,
+				endDate: end
+			}, cb);
+
+			cb(start, end);
+
+		});
+
+		// Calendar animation and visual settings
+		$('#booking-date-search').on('show.daterangepicker', function(ev, picker) {
+			$('.daterangepicker').addClass('calendar-visible calendar-animated bordered-style');
+			$('.daterangepicker').removeClass('calendar-hidden');
+		});
+		$('#booking-date-search').on('hide.daterangepicker', function(ev, picker) {
+			$('.daterangepicker').removeClass('calendar-visible');
+			$('.daterangepicker').addClass('calendar-hidden');
+		});
+
+		$(window).on('load', function() {
+			$('#booking-date-search').val('');
+		});
+		</script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->			
+
+	</body>
+</html>

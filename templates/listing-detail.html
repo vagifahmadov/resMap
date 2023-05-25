@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+        <title>Reveal - Business Listing & Directory HTML Template</title>
+		
+		<link rel="shortcut icon" href="#">
+
+        <!-- All Plugins Css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins.css') }}">
+		 
+		
+        <!-- Custom CSS -->
+        <link href="{{ url_for('static', filename='assets/css/styles.css') }}" rel="stylesheet">
+		
+		<!-- Custom Color Option -->
+		<link href="{{ url_for('static', filename='assets/css/colors.css') }}" rel="stylesheet">
+		
+    </head>
+	
+    <body class="red-skin">
+	
+		 <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+		
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+            <!-- Start Navigation -->
+			<div class="header header-light">
+				<div class="container">
+					<nav id="navigation" class="navigation navigation-landscape">
+						<div class="nav-header">
+							<a class="nav-brand" href="#">
+								<img src="{{ url_for('static', filename='assets/img/logo.png') }}" class="logo" alt="" />
+							</a>
+							<div class="nav-toggle"></div>
+						</div>
+						<div class="nav-menus-wrapper">
+							<ul class="nav-menu">
+							
+								<li><a href="javascript:void(0);">Home<span class="submenu-indicator"></span></a>
+								</li>
+								<li><a href="contact.html">Contacts</a></li>
+								
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+			<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+			
+			
+			<!-- ================================ Start Banner =================================== -->
+			<section class="page-title-banner" style="background-image:url({{datas.Photos_Header}}); width: 100%; height: 100%; object-fit: none;"> <!--1920x900-->
+				<div class="container">
+					<div class="row m-0 align-items-end detail-swap">
+						<div class="tr-list-wrap">
+							<div class="tr-list-detail">
+								<div class="tr-list-thumb">
+									<img src="{{datas.Photos_Place}}" class="img-responsive" alt="" style="width: 100%; height: 100%; object-fit: none;" /><!--400x400-->
+								</div>
+								<div class="tr-list-info">
+									<div class="cate-gorio"><a href="#">{{datas.Catagory}}</a></div>
+									<h4 class="veryfied-list">{{datas.Name}}</h4>
+									<p><i class="ti-location-pin"></i>{{datas.Address}}</p>
+									<div class="tr-list-ratting">
+										<div class="ratting-group">
+											{% for st in range(datas.stared) %}<i class="fas fa-star filled"></i>{% endfor %}
+											{% for st in range(datas.noneStared) %}<i class="fas fa-star"></i>{% endfor %}
+											<a href="#" class="overall-reviews">{{datas.Rate}} / ({{datas.Reviews_Count}})</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ================================ End Banner ========================================= -->
+			
+			<!-- ============================ Property Detail Start ================================== -->
+			<section class="gray">
+				<div class="container">
+					<div class="row">
+						
+						<!-- property main detail -->
+						<div class="col-lg-8 col-md-12 col-sm-12">
+							
+							<!-- Single Block Wrap -->
+							<div class="Reveal-block-wrap">
+								
+								<div class="Reveal-block-header">
+									<h4 class="block-title">Description</h4>
+								</div>
+								
+								<div class="Reveal-block-body">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+								</div>
+								
+							</div>
+							
+							<!-- Single Block Wrap -->
+							
+							
+							<!-- Single Block Wrap -->
+							<div class="Reveal-block-wrap">
+								
+								<div class="Reveal-block-header">
+									<h4 class="block-title">Location</h4>
+								</div>
+								
+								<div class="Reveal-block-body">
+									<div class="map-container">
+										<iframe src="{{datas.Place_link}}" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+									</div>
+
+								</div>
+								
+							</div>
+							
+							<!-- Single Block Wrap -->
+							
+							<!-- Reviews Comments -->
+							<div class="list-single-main-item fl-wrap">
+								<div class="list-single-main-item-title fl-wrap">
+									<h3>Item Reviews</h3>
+								</div>
+								<div class="reviews-comments-wrap">
+									<!-- reviews-comments-item -->  
+									<div class="reviews-comments-item">
+										<div class="review-comments-avatar">
+										</div>
+										<div class="reviews-comments-item-text">											
+											<div class="listing-rating {% if datas.staredRReview_1 == 5 %}high{% elif datas.staredRReview_1 == 4 %}good{% else %}mid{% endif %}" data-starrating2="5">
+												{% for st in range(datas.staredRReview_1) %}<i class="ti-star active"></i>{% endfor %}
+												{% for st in range(datas.noneStaredRReview_1) %}<i class="ti-star"></i>{% endfor %}
+												<span class="review-count">{{datas.staredRReview_1}}</span> </div>
+											<div class="clearfix"></div>
+											<p>{{datas.Review_Comment_1}}</p>
+											
+										</div>
+									</div>
+									<!--reviews-comments-item end-->  
+									
+									<!-- reviews-comments-item -->  
+									<div class="reviews-comments-item">
+										<div class="review-comments-avatar">
+										</div>
+										<div class="reviews-comments-item-text">											
+											<div class="listing-rating  {% if datas.staredRReview_2 == 5 %}high{% elif datas.staredRReview_2 == 4 %}good{% else %}mid{% endif %}" data-starrating2="5">
+												{% for st in range(datas.staredRReview_2) %}<i class="ti-star active"></i>{% endfor %}
+												{% for st in range(datas.noneStaredRReview_2) %}<i class="ti-star"></i>{% endfor %}
+												<span class="review-count">{{datas.staredRReview_2}}</span> </div>
+											<div class="clearfix"></div>
+											<p>{{datas.Review_Comment_2}}</p>
+										</div>
+									</div>
+									<!--reviews-comments-item end-->
+									
+									<!-- reviews-comments-item -->  
+									<div class="reviews-comments-item">
+										<div class="review-comments-avatar">
+										</div>
+										<div class="reviews-comments-item-text">											
+											<div class="listing-rating {% if datas.staredRReview_3 == 5 %}high{% elif datas.staredRReview_3 == 4 %}good{% else %}mid{% endif %}" data-starrating2="5">
+												{% for st in range(datas.staredRReview_3) %}<i class="ti-star active"></i>{% endfor %}
+												{% for st in range(datas.noneStaredRReview_3) %}<i class="ti-star"></i>{% endfor %}
+												<span class="review-count">{{datas.staredRReview_3}}</span> </div>
+											<div class="clearfix"></div>
+											<p>{{datas.Review_Comment_3}}</p>
+										</div>
+									</div>
+									<!--reviews-comments-item end-->
+									
+								</div>
+							</div>
+							
+							
+						</div>
+						
+						<!-- Listing Sidebar -->
+						<div class="col-lg-4 col-md-12 col-sm-12">
+							
+							<div class="verified-list mb-4">
+								<i class="lni-phone-handset"></i><a href="tel: {{datas.Telephone}}" style="color: #fff">{{datas.Telephone}}</a>
+							</div>
+							
+							<div class="page-sidebar">
+							
+								<!-- Agent Detail -->	
+								<!-- Review Block Wrap -->
+								
+								
+								<!-- Listing Hour Detail -->
+								<div class="Reveal-side-widget">
+									<div class="Reveal-Reveal-side-widget-header dark red">
+										<div class="Reveal-thumb-details">
+											<h4>Opening Time</h4>
+											<span>8:00 AM To 6:00 PM</span>
+										</div>
+										<div class="opening-status">Closed</div>
+										<div class="clearfix"></div>
+									</div>
+									
+									<div class="Reveal-other-body">
+										<ul class="listing-hour-day">
+											<li>
+												<span class="listing-hour-day">Monday</span>
+												<span class="listing-hour-time">{{datas.Monday}}</span>
+											</li>
+											<li>
+												<span class="listing-hour-day">Tuesday</span>
+												<span class="listing-hour-time">{{datas.Tuesday}}</span>
+											</li>
+											<li>
+												<span class="listing-hour-day">Wednesday</span>
+												<span class="listing-hour-time">{{datas.Wednesday}}</span>
+											</li>
+											<li class="active">
+												<span class="listing-hour-day">Thursday</span>
+												<span class="listing-hour-time">{{datas.Thursday}}</span>
+											</li>
+											<li>
+												<span class="listing-hour-day">Friday</span>
+												<span class="listing-hour-time">{{datas.Friday}}</span>
+											</li>
+											<li>
+												<span class="listing-hour-day">Saturday</span>
+												<span class="listing-hour-time">{{datas.Saturday}}</span>
+											</li>
+											<li>
+												<span class="listing-hour-day">Sunday</span>
+												<span class="listing-hour-time">{{datas.Sunday}}</span>
+											</li>
+											
+										</ul>
+									</div>
+									
+								</div>
+								
+								<!-- Some Imp Boxes -->
+
+								<!-- Some Imp Boxes -->
+								
+								<!-- Statics Info -->
+								
+								
+								<!-- Business Info -->
+								<div class="tr-single-box">
+									<div class="tr-single-header">
+										<h4><i class="ti-direction"></i> Listing Info</h4>
+									</div>
+									
+									<div class="Reveal-other-body">
+										<ul class="Reveal-service">
+											<li>
+												<div class="Reveal-service-icon">
+													<a href="#">
+														<div class="Reveal-icon-box-round">
+															<i class="lni-map-marker"></i>
+														</div>
+														<div class="Reveal-icon-box-text">
+															{{datas.Address}}
+														</div>
+													</a>
+												</div>
+											</li>
+											
+											<li>
+												<div class="Reveal-service-icon">
+													<a href="#">
+														<div class="Reveal-icon-box-round">
+															<i class="lni-phone-handset"></i>
+														</div>
+														<div class="Reveal-icon-box-text">
+															{{datas.Telephone}}
+														</div>
+													</a>
+												</div>
+											</li>
+											
+											<li>
+
+											</li>
+											
+											<li>
+												<div class="Reveal-service-icon">
+													<a href="#">
+														<div class="Reveal-icon-box-round">
+															<i class="lni-world"></i>
+														</div>
+														<div class="Reveal-icon-box-text">
+															{{datas.Website}}
+														</div>
+													</a>
+												</div>
+											</li>
+											
+										</ul>
+									</div>
+									
+								</div>							
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Property Detail End ================================== -->
+			
+			
+			<!-- ============================ Call To Action Start ================================== -->
+			
+			<!-- ============================ Call To Action End ================================== -->
+			
+			<!-- ============================ Footer Start ================================== -->
+			<footer class="dark-footer skin-dark-footer">
+				<div>
+					<div class="container">
+						<div class="row">
+							
+							<div class="col-lg-4 col-md-6">
+								<div class="footer-widget">
+									<img src="{{ url_for('static', filename='assets/img/logo-light.png') }}" class="img-fluid f-logo" alt="" />
+									<p>407-472 Rue Saint-Sulpice, Montreal<br>Quebec, H2Y 2V8</p>
+									<ul class="footer-bottom-social">
+										<li><a href="#"><i class="ti-facebook"></i></a></li>
+										<li><a href="#"><i class="ti-twitter"></i></a></li>
+										<li><a href="#"><i class="ti-instagram"></i></a></li>
+										<li><a href="#"><i class="ti-linkedin"></i></a></li>
+									</ul>
+								</div>
+							</div>		
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Useful links</h4>
+									<ul class="footer-menu">
+										<li><a href="about-us.html">About Us</a></li>
+										<li><a href="faq.html">FAQs Page</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="login.html">Login</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Developers</h4>
+									<ul class="footer-menu">
+										<li><a href="booking.html">Booking</a></li>
+										<li><a href="stays.html">Stays</a></li>
+										<li><a href="adventures.html">Adventures</a></li>
+										<li><a href="author-detail.html">Author Detail</a></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Useful links</h4>
+									<ul class="footer-menu">
+										<li><a href="about-us.html">About Us</a></li>
+										<li><a href="faq.html">Jobs</a></li>
+										<li><a href="checkout.html">Events</a></li>
+										<li><a href="about-us.html">Press</a></li>
+									</ul>
+								</div>
+							</div>
+									
+							<div class="col-lg-2 col-md-4">
+								<div class="footer-widget">
+									<h4 class="widget-title">Useful links</h4>
+									<ul class="footer-menu">
+										<li><a href="about-us.html">Support</a></li>
+										<li><a href="about-us.html">About Us</a></li>
+										<li><a href="checkout.html">Privacy & Terms</a></li>
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row align-items-center">
+							
+							<div class="col-lg-12 col-md-12 text-center">
+								<p class="mb-0">© 2021 Reveal. Designd By <a href="https://themezhub.net">Themezhub</a> All Rights Reserved</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- ============================ Footer End ================================== -->
+			
+			<!-- Log In Modal -->
+			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal">
+				<div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+					<div class="modal-content" id="registermodal">
+						<span class="mod-close" data-dismiss="modal"><i class="ti-close"></i></span>
+						<div class="modal-body">
+							<h4 class="modal-header-title">Log <span class="theme-cl">In</span></h4>
+							<div class="login-form">
+								<form>
+								
+									<div class="form-group">
+										<label>User Name</label>
+										<div class="input-with-icon gray">
+											<input type="text" class="form-control" placeholder="Username">
+											<i class="ti-user"></i>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label>Password</label>
+										<div class="input-with-icon gray">
+											<input type="password" class="form-control" placeholder="*******">
+											<i class="ti-unlock"></i>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<button type="submit" class="btn btn-md full-width pop-login">Login</button>
+									</div>
+								
+								</form>
+							</div>
+							<div class="modal-divider"><span>Or login via</span></div>
+							<div class="social-login mb-3">
+								<ul>
+									<li><a href="#" class="btn fb"><i class="ti-facebook"></i></a></li>
+									<li><a href="#" class="btn google"><i class="ti-google"></i></a></li>
+									<li><a href="#" class="btn twitter"><i class="ti-twitter"></i></a></li>
+								</ul>
+							</div>
+							<div class="modat-foot">
+								<div class="md-left">Have't Account? <a href="register.html" class="theme-cl">Sign Up</a></div>
+								<div class="md-right"><a href="#" class="theme-cl">Forget Password?</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+			
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+			
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/popper.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/rangeslider.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/select2.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/slick.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/slider-bg.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/lightbox.js') }}"></script> 
+		<script src="{{ url_for('static', filename='assets/js/imagesloaded.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/jquery.counterup.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/js/counterup.min.js') }}"></script>
+		 
+		<script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+
+	</body>
+</html>
